@@ -35,7 +35,7 @@ jobs:
         python3.9 main.py
     - name: Run python script shell if statement
       run: |
-        if [ ${{ github.event.inputs.trigger == 'TRUE' }} ]; then
+        if [ ${{ github.event.inputs.trigger == 'TRUE' }} == true ]; then
           echo Hi "TRUE"; python3.9 main.py
         else
           echo Hi "FALSE"; python3.9 main.py
