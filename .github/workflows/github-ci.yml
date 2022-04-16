@@ -24,12 +24,12 @@ jobs:
       run: |
         echo 'Hi ${{ github.event.inputs.trigger }}'
     - name: Run python script if
-      if: github.event.inputs.trigger == "TRUE"
+      if: ${{ github.event.inputs.trigger == 'TRUE' }}
       run: |
          echo true 
          python3.9 main.py
     - name: Run python script else
-      if: github.event.inputs.trigger == "FALSE"
+      if: ${{ github.event.inputs.trigger == 'FALSE' }}
       run: |
         echo false
         python3.9 main.py
