@@ -25,5 +25,5 @@ jobs:
         echo 'Hi ${{ github.event.inputs.trigger }}'
     - name: Run python script
       run: |
-        python3.9 main.py
+        if [ ${{ github.event.inputs.trigger == "TRUE" }} ]; then  echo true python3.9 main.py; else echo false python3.9 main.py; fi
 
