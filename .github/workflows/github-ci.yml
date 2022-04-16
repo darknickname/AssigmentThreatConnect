@@ -1,4 +1,4 @@
-name: test
+name: Test
 on:
   workflow_dispatch:
     inputs:
@@ -20,10 +20,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run one echo
+    - name: Get inputs value
       run: |
         echo 'Hi ${{ github.event.inputs.trigger }}'
-    - name: test
+    - name: Run python script
       run: |
         python3.9 main.py
 
