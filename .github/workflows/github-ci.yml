@@ -9,9 +9,10 @@ on:
 permissions:
   contents: read
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
     - uses: actions/checkout@v3
     - name: Set up Python 3.9
       uses: actions/setup-python@v3
