@@ -23,7 +23,15 @@ jobs:
     - name: Get inputs value
       run: |
         echo 'Hi ${{ github.event.inputs.trigger }}'
-    - name: Run python script
+    - name: Run python script if
+      if: github.event.inputs.trigger == "TRUE"
       run: |
-        if [ ${{ github.event.inputs.trigger == "TRUE" }} ]; then python3.9 main.py; else echo false; fi
+         echo true 
+         python3.9 main.py
+    - name: Run python script else
+      if: github.event.inputs.trigger == "FALSE"
+      run: |
+        echo false
+        python3.9 main.py
+
 
